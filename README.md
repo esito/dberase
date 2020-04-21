@@ -43,9 +43,9 @@ The simplified domain model for this sample project:
 
 ### Generate the GDPR forget me program code ###
 
-Use the `eraseme.ano` file as the **Erase model** parameter to the service on [http://dbservices.esito.no/erase.html](http://dbservices.esito.no/erase.html). Ignore the **Root package** parameter (giving `example.eraser` package value) and press the **Download source ZIP file** button.
+Use the `eraseme.ano` file as the **Erase model File name** parameter to the service on [http://anonymizer.esito.no](https://anonymizer.esito.no/auth/dashboard/dberase). Ignore the **Root package** parameter (giving `example.eraser` package value) and press the **Download ZIP** button.
 
-![DBerase service](images/dberase.png)
+![DBerase service](images/dberaseweb.png)
 
 Unpack the resulting zip to the java `erasesample` project you downloaded/cloned from github. It unzips the generated source into the `src` folder and the `pom.xml` and `readme.md` to the erasesample project root.
 
