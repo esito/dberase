@@ -20,8 +20,7 @@ Files which are part of the project:
 
 - `erasesample\eraseme.ano`: describes erase rules, input to the DBerase service
 - `erasesample\src\main\java`: source files which represents custom implementations
-- `erasesample\src\main\resources`: settings for the H2 database
-	- application.properties with database settings
+- `erasesample\src\main\resources`: schema for the H2 database
 	- data.sql: schema and inserts to create the H2 database
 
 ### Create and populate the database ###
