@@ -23,6 +23,8 @@ foreign-key
     ADDRESS CUSTOMER_CUSTOMERNO
     CUSTOMER CUSTOMERNO
  
+transformation PostCodeGeneralization
+
 // Forget Me - based on customer number
 task forgetMe
 {

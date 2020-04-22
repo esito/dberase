@@ -1,4 +1,4 @@
-package example.anonymizer.transformations;
+package example.eraser.transformations;
 
 import no.esito.anonymizer.ITransformation;
 

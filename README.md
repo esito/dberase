@@ -6,7 +6,7 @@ This project contains resources for [DBerase](http://www.esito.no/dberase) examp
 
 The example uses Java, Maven and H2 database. It is tested with the versions:
 
-- Java 1.8 and 1.13
+- Java 1.8/1.13
 - Maven 3.6.1
 - H2 1.4.200
 
@@ -65,11 +65,11 @@ The generated source may be built using Maven. Add the H2 depedencies to the `po
         <version>${h2.version}</version>
     </dependency>
 
-To build the eraseme sample program, run **mvn install**, which creates the `eraseme-0.0.1.jar` in the `target` folder.
+To build the eraseme sample program, open a command shell and run **mvn install**, which creates the `eraseme-0.0.1.jar` in the `target` folder.
 
 ### Edit application.properties ###
 
-If necessary, edit the database properties in the application.properties file:
+Edit the database and jpa properties in the `application.properties` file in the `src/main/resources` folder:
 
 	# Database connection parameters
 	spring.jpa.hibernate.ddl-auto=create-drop
@@ -91,21 +91,21 @@ The program name **eraseme** is given by your input `eraseme.ano` file name. The
 
 To check that the database connection is ok: <http://localhost:8080/h2-console>
 
-Test the api by navigating to <http://localhost:8080/swagger-ui.html> and open the `erase-controller`.
+Test the generated REST API by navigating to <http://localhost:8080/swagger-ui.html> and open the `erase-controller`.
 
-A set of tasks is defined as REST endpoints, to see the list, open `erase-controller`:
+A set of tasks is defined as REST endpoints:
 
 	Available erase tasks:
-		/api/erase
-		/api/Erase_CUSTOMER
-		/api/Erase_HOTELROOMCATEGORY
+		/api/erase - general api that takes taskname and necessary parameters 
+		/api/Erase_CUSTOMER - takes customerno as parameter
+		/api/Erase_HOTELROOMCATEGORY - takes hotel_id, roomcategory_id and fromdate as parameters
 
 Each of these tasks may be run with the swagger console.
 
 Check how the erase tasks work:
 
-- investigate the content of the database
-- check how the tasks and rules are defined
+- investigate the content of the H2 database
+- check how the tasks and rules are defined in the `eraseme.ano` file
 - run the tasks, one at the time
 	- erase_customer 1000234 (the number is one of the customer ids)
 	- erase_hotelroomcategory 1 11 2005-10-15
@@ -115,6 +115,6 @@ Check how the erase tasks work:
 
 Inspect the H2 database by navigating to <http://localhost:8080/h2-console>
 
-	select * from customer where customer_id=1000234;
+	select * from customer where customerno=1000234;
 	select * from hotelroomcategory where hotel_id=1 AND 
 		ROOMCATEGORY_ID = 11 AND FROMDATE = '2005-10-15';
