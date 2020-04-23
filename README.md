@@ -46,7 +46,7 @@ Use the `eraseme.ano` file as the **Erase model File name** parameter to the ser
 
 ![DBerase service](images/dberaseweb.png)
 
-Unpack the resulting zip to the java `erasesample` project you downloaded/cloned from github. It unzips the generated source into the `src` folder and the `pom.xml` and `readme.md` to the erasesample project root.
+Unpack the resulting zip to the java `erasesample` project you downloaded/cloned from github. It unzips the generated source into the `src` folder and the `pom.xml` and `readme.md` to the erasesample project root. Generated code is written to the `src/main` folder and it is regenerated each time the **DBerase** service is used. Be aware of that customizations might be overwritten each time it is regenerated.
 
 ## Prepare and setup ##
 
