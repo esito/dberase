@@ -12,7 +12,7 @@ The example uses Java, Maven and H2 database. It is tested with the versions:
 
 ## Using the samples ##
 
-Download and unzip the project to a java project (`dberase`) or clone the repository: 
+Download and unzip this project to a java project (`dberase`) or clone the repository: 
 
 	git clone https://github.com/esito/dberase.git
 
@@ -21,7 +21,7 @@ Files which are part of the project:
 - `erasesample\eraseme.ano`: describes erase rules, input to the DBerase service
 - `erasesample\src\main\java`: source files which represents custom implementations
 - `erasesample\src\main\resources`: schema for the H2 database
-	- data.sql: schema and inserts to create the H2 database
+	- `data.sql`: schema and inserts to create the H2 database
 
 ### Create and populate the database ###
 
@@ -42,11 +42,17 @@ The simplified domain model for this sample project:
 
 ### Generate the GDPR forget me program code ###
 
-Use the `eraseme.ano` file as the **Erase model File name** parameter to the service on [http://anonymizer.esito.no](https://anonymizer.esito.no/auth/dashboard/dberase). Ignore the **Root package** parameter (giving `example.eraser` package value) and press the **Download ZIP** button.
+Go to the [http://anonymizer.esito.no](https://anonymizer.esito.no) web, register a user and buy the wanted service, either free or payed for.
+
+Go to the DBerase service on [http://anonymizer.esito.no/auth/dashboard/dberase](https://anonymizer.esito.no/auth/dashboard/dberase). Choose **SELECT A FILE** and use the `eraseme.ano` file as the **Erase model File name** parameter to the service. Ignore the **Root package** parameter (giving `example.eraser` package value) and press the **DOWNLOAD ZIP** button.
 
 ![DBerase service](images/dberaseweb.png)
 
-Unpack the resulting zip to the java `erasesample` project you downloaded/cloned from github. It unzips the generated source into the `src` folder and the `pom.xml` and `readme.md` to the erasesample project root. Generated code is written to the `src/main` folder and it is regenerated each time the **DBerase** service is used. Be aware of that customizations might be overwritten each time it is regenerated.
+Unpack the resulting zip to the java project you downloaded/cloned from github. Unzip the generated source into the `erasesample` folder. The `pom.xml` and `readme.md` will be copied to the `erasesample` project root. Generated code is written to the `src` folder. It is regenerated each time the **DBerase** service is used. Be aware of that customizations might be overwritten each time it is regenerated. The project `dberase-master/erasesample` will look like this after unzip:
+
+	src/main/java/example/eraser/transformations/PostCodeGeneralization.java
+	src/main/resources/data.sql
+	erasesample.ano
 
 ## Prepare and setup ##
 
@@ -68,7 +74,7 @@ To build the eraseme sample program, open a command shell and run **mvn install*
 
 ### Edit application.properties ###
 
-Edit the database and jpa properties in the `application.properties` file in the `src/main/resources` folder:
+If necessary, edit the database and jpa properties in the `application.properties` file in the `src/main/resources` folder:
 
 	# Database connection parameters
 	spring.jpa.hibernate.ddl-auto=create-drop
@@ -88,9 +94,9 @@ To test the generated code, start a command shell and run this command from the 
 
 The program name **eraseme** is given by your input `eraseme.ano` file name. The program displays the Spring Boot and eraseme program messages on startup.
 
-To check that the database connection is ok: <http://localhost:8080/h2-console>
+To check that the database connection is ok: [http://localhost:8080/h2-console](http://localhost:8080/h2-console).
 
-Test the generated REST API by navigating to <http://localhost:8080/swagger-ui.html> and open the `erase-controller`.
+Test the generated REST API by navigating to [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) and open the `erase-controller`.
 
 A set of tasks is defined as REST endpoints:
 
@@ -112,7 +118,7 @@ Check how the erase tasks work:
 
 ### Sample database session ###
 
-Inspect the H2 database by navigating to <http://localhost:8080/h2-console>
+Inspect the H2 database by navigating to [http://localhost:8080/h2-console](http://localhost:8080/h2-console):
 
 	select * from customer where customerno=1000234;
 	select * from hotelroomcategory where hotel_id=1 AND 
