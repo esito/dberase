@@ -52,7 +52,8 @@ The project `dberase-master/erasesample` will look like this before unzipping th
 
 	src/main/java/example/eraser/transformations/PostCodeGeneralization.java
 	src/main/resources/data.sql
-	erasesample.ano
+	application.properties
+	eraseme.ano
 
 Unpack the resulting zip to the java project you downloaded/cloned from github. Unzip the generated source into the `erasesample` folder. The `pom.xml` and `readme.md` will be copied to the `erasesample` project root. Generated code is written to the `src` folder. It is regenerated each time the **DBerase** service is used. Be aware of that customizations might be overwritten each time it is regenerated. 
 
