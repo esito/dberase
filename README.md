@@ -1,6 +1,6 @@
 # DBerase
 
-This project contains resources for [DBerase](http://www.esito.no/dberase) example project. It demostrates GDPR forget me masking of customers in a hotel booking systems database. The example consists of the combination of this github project and use of the DBerase service. The generated program uses spring boot, runs in a webserver and has embedded REST APIs for the defined erase functions. 
+This project contains resources for [DBerase](http://www.esito.no/dberase) example project. It demonstrates GDPR forget me masking of customers in a hotel booking systems database. The example consists of the combination of this github project and use of the DBerase service. The generated program uses spring boot, runs in a webserver and has embedded REST APIs for the defined erase functions. 
 
 ## Prerequisites to run the program ##
 
@@ -42,28 +42,30 @@ The simplified domain model for this sample project:
 
 ### Generate the GDPR forget me program code ###
 
-Go to the [http://anonymizer.esito.no](https://anonymizer.esito.no) web, register a user and buy the wanted service, either free or payed for.
+Go to the [http://anonymizer.esito.no](https://anonymizer.esito.no) web, register a user and subscribe to the DBerase service.
 
 Go to the DBerase service on [http://anonymizer.esito.no/auth/dashboard/dberase](https://anonymizer.esito.no/auth/dashboard/dberase). Choose **SELECT A FILE** and use the `eraseme.ano` file as the **Erase model File name** parameter to the service. Ignore the **Root package** parameter (giving `example.eraser` package value) and press the **DOWNLOAD ZIP** button.
 
 ![DBerase service](images/dberaseweb.png)
 
-Unpack the resulting zip to the java project you downloaded/cloned from github. Unzip the generated source into the `erasesample` folder. The `pom.xml` and `readme.md` will be copied to the `erasesample` project root. Generated code is written to the `src` folder. It is regenerated each time the **DBerase** service is used. Be aware of that customizations might be overwritten each time it is regenerated. The project `dberase-master/erasesample` will look like this after unzip:
+The project `dberase-master/erasesample` will look like this before unzipping the result:
 
 	src/main/java/example/eraser/transformations/PostCodeGeneralization.java
 	src/main/resources/data.sql
 	erasesample.ano
 
+Unpack the resulting zip to the java project you downloaded/cloned from github. Unzip the generated source into the `erasesample` folder. The `pom.xml` and `readme.md` will be copied to the `erasesample` project root. Generated code is written to the `src` folder. It is regenerated each time the **DBerase** service is used. Be aware of that customizations might be overwritten each time it is regenerated. 
+
 ## Prepare and setup ##
 
 ### Using Maven, edit pom.xml ###
- 
-The generated source may be built using Maven. Add the H2 depedencies to the `pom.xml` file and change the version number to fit your H2 installation:
+
+The generated source may be built using Maven. Add the H2 dependencies to the `pom.xml` file and change the version number to fit your H2 installation:
 
     <properties>
         <h2.version>1.4.200</h2.version>
     </properties>
-
+    
     <dependency>
         <groupId>com.h2database</groupId>
         <artifactId>h2</artifactId>
