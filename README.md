@@ -19,6 +19,7 @@ Download and unzip this project to a java project (`dberase`) or clone the repos
 Files which are part of the project:
 
 - `erasesample\eraseme.ano`: describes erase rules, input to the DBerase service
+- `erasesample\application.properties`: database connection settings
 - `erasesample\src\main\java`: source files which represents custom implementations
 - `erasesample\src\main\resources`: schema for the H2 database
 	- `data.sql`: schema and inserts to create the H2 database
