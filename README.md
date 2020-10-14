@@ -60,22 +60,6 @@ Unpack the resulting zip to the java project you downloaded/cloned from github. 
 
 ## Prepare and setup ##
 
-### Using Maven, edit pom.xml ###
-
-The generated source may be built using Maven. Add the H2 dependencies to the `pom.xml` file and change the version number to fit your H2 installation:
-
-    <properties>
-        <h2.version>1.4.200</h2.version>
-    </properties>
-    
-    <dependency>
-        <groupId>com.h2database</groupId>
-        <artifactId>h2</artifactId>
-        <version>${h2.version}</version>
-    </dependency>
-
-To build the eraseme sample program, open a command shell and run **mvn install**, which creates the `eraseme-0.0.1.jar` in the `target` folder.
-
 ### Edit application.properties ###
 
 If necessary, edit the database and jpa properties in the `application.properties` file in the `src/main/resources` folder:
@@ -91,6 +75,22 @@ If necessary, edit the database and jpa properties in the `application.propertie
 	spring.h2.console.path=/h2-console
 	spring.h2.console.settings.trace=false
 	spring.h2.console.settings.web-allow-others=true
+
+### Using Maven, edit pom.xml ###
+
+The generated source may be built using Maven. Add the H2 dependencies to the `pom.xml` file and change the version number to fit your H2 installation:
+
+    <properties>
+        <h2.version>1.4.200</h2.version>
+    </properties>
+    
+    <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <version>${h2.version}</version>
+    </dependency>
+
+To build the eraseme sample program, open a command shell and run **mvn install**, which creates the `eraseme-0.0.1.jar` in the `target` folder.
 
 ## Run the generated application ##
 
