@@ -25,15 +25,16 @@ foreign-key
  
 transformation PostCodeGeneralization
 
-// Forget Me - based on customer number
+// Forget Me - tasks
 task forgetMe
 {
+    // Forget Me - based on customer number
     erase CUSTOMER
         where "CUSTOMERNO = %PARAMETER%"
 		mask NAME
 		    format "firstname lastname"
 		mask EMAIL
-		    format epost@email.com
+		    format post@email.com
 		    transform Email
 		{
 			// Anonymize identifiable columns
@@ -45,6 +46,7 @@ task forgetMe
 				mask POSTALCODE
 				    transform PostCodeGeneralization
 		}
+    // Remove a Room Category - based on a 3 column primary key
     erase HOTELROOMCATEGORY
         where "(HOTEL_ID = %PARAMETER1% AND ROOMCATEGORY_ID = %PARAMETER2% AND FROMDATE = '%PARAMETER3%')"
 }
