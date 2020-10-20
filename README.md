@@ -98,7 +98,9 @@ To test the generated code, start a command shell and run this command from the 
 
 The program name **eraseme** is given by your input `eraseme.ano` file name. The program displays the Spring Boot and eraseme program messages on startup.
 
-To check that the database connection is ok: [http://localhost:8080/h2-console](http://localhost:8080/h2-console).
+To check that the database connection is ok: [http://localhost:8080/h2-console](http://localhost:8080/h2-console). 
+
+The first time you're using the H2 Console, you must set correct JDBC URL: `jdbc:h2:mem:testdb` and press the Save button.
 
 Test the generated REST API by navigating to [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) and open the `erase-controller`.
 
