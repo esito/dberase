@@ -66,6 +66,7 @@ If necessary, edit the database and jpa properties in the `application.propertie
 
 	# Database connection parameters
 	spring.jpa.hibernate.ddl-auto=create-drop
+	spring.jpa.open-in-view=false
 	spring.datasource.url=jdbc:h2:mem:testdb
 	spring.datasource.driverClassName=org.h2.Driver
 	spring.datasource.username=sa
