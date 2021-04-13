@@ -25,16 +25,15 @@ foreign-key
  
 transformation example.eraser.transformations.PostCodeGeneralization
 
-// Forget Me - tasks
+// Forget Me - based on customer number
 task forgetMe
 {
-    // Forget Me - based on customer number
     erase CUSTOMER
         where "CUSTOMERNO = %PARAMETER%"
 		mask NAME
 		    format "firstname lastname"
 		mask EMAIL
-		    format post@email.com
+		    format epost@email.com
 		    transform Email
 		{
 			// Anonymize identifiable columns
@@ -46,7 +45,6 @@ task forgetMe
 				mask POSTALCODE
 				    transform PostCodeGeneralization
 		}
-    // Remove a Room Category - based on a 3 column primary key
     erase HOTELROOMCATEGORY
         where "(HOTEL_ID = %PARAMETER1% AND ROOMCATEGORY_ID = %PARAMETER2% AND FROMDATE = '%PARAMETER3%')"
 }
