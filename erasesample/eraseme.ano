@@ -20,10 +20,10 @@ table HOTELROOMCATEGORY
     column integer ROOMCATEGORY_ID size 10
     primary-key HOTEL_ID, ROOMCATEGORY_ID, FROMDATE
 foreign-key
-    ADDRESS CUSTOMER_CUSTOMERNO
     CUSTOMER CUSTOMERNO
+    ADDRESS CUSTOMER_CUSTOMERNO
  
-transformation PostCodeGeneralization
+transformation example.eraser.transformations.PostCodeGeneralization
 
 // Forget Me - tasks
 task forgetMe
